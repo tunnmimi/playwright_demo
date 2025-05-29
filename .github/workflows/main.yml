@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: feat/update-playwright-bdd-js
+          ref: main
 
       # Bước 2: Thiết lập Node.js
       - name: Setup Node.js
