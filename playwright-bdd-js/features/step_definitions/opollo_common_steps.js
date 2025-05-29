@@ -4,7 +4,7 @@ const fs = require('fs');
 
 class CustomWorld {
   async init() {
-    this.browser = await chromium.launch({ headless: false }); // Chạy browser không headless để debug
+    this.browser = await chromium.launch({ headless: true }); // Chạy browser không headless để debug
     this.context = await this.browser.newContext();
     this.page = await this.context.newPage();
   }
