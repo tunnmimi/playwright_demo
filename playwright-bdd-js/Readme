@@ -1,0 +1,54 @@
+npx playwright test
+    Runs the end-to-end tests.
+
+  npx playwright test --ui
+    Starts the interactive UI mode.
+
+  npx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  npx playwright test example
+    Runs the tests in a specific file.
+
+  npx playwright test --debug
+  npx playwright test b2c_return.spec.js --debug
+
+    Runs the tests in debug mode.
+
+  npx playwright codegen
+    Auto generate tests with Codegen.
+
+We suggest that you begin by typing:
+
+    npx playwright test
+
+npx cucumber-js tests/features/b2b_return.feature
+//Config Allure
+npm install --save-dev allure-js-commons allure-cucumberjs
+npm i allure-cucumberjs@2.10.0
+https://www.npmjs.com/package/allure-cucumberjs/v/2.10.0
+
+
+
+// Run test and report
+npx cucumber-js --profile b2b_return
+npx cucumber-js --profile b2c_return
+npx cucumber-js --profile common
+open report/b2b_return-report.html 
+open report/common-report.html 
+
+
+
+
+
+
+
+
+
+
+ npm install
+ npm init playwright@latest
+npx playwright install 
+ npm login
+ npm install @cucumber/cucumber
+ npm install playwright @cucumber/cucumber

@@ -1,0 +1,92 @@
+{
+  "default": {
+    "paths": [
+      "./features/**/*.feature"
+    ],
+    "require": [
+      "./features/step_definitions/**/*.js"
+    ],
+    "format": [
+      "@cucumber/pretty-formatter",
+      "html:report/default-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    }
+  },
+  "common": {
+    "paths": [
+      "./features/opollo_login.feature"
+    ],
+    "require": [
+      "./features/step_definitions/opollo_common_steps.js"
+    ],
+    "format": [
+      "@cucumber/pretty-formatter",
+      "html:report/common-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    }
+  },
+  "b2b_return": {
+    "paths": [
+      "./features/opollo_b2b_return.feature"
+    ],
+    "require": [
+      "./features/step_definitions/opollo_b2b_return_steps.js"
+    ],
+    "format": [
+      "@cucumber/pretty-formatter",
+      "html:report/b2b_return-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    }
+  },
+  "b2c_return": {
+    "paths": [
+      "./features/opollo_b2c_return.feature"
+    ],
+    "require": [
+      "./features/step_definitions/opollo_b2c_return_steps.js"
+    ],
+    "format": [
+      "@cucumber/pretty-formatter",
+      "html:report/b2c_return-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    }
+  },
+  "octopos_b2c": {
+    "paths": [
+      "./features/octopos_b2c.feature"
+    ],
+    "require": [
+      "./features/step_definitions/octopos_b2c_steps.js"
+    ],
+    "format": [
+      "@cucumber/pretty-formatter",
+      "html:report/octopos_b2c-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    }
+  },
+  "b2c_ldp": {
+    "paths": [
+      "./features/opollo_b2c_ldp.feature"
+    ],
+    "require": [
+      "./features/step_definitions/opollo_b2c_ldp_steps.js"
+    ],
+    "format": [
+      "@cucumber/pretty-formatter",
+      "html:report/b2c_ldp-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    }
+  }
+}

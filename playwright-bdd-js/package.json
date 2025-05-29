@@ -1,0 +1,23 @@
+{
+  "name": "demo_cucumber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:b2b": "cucumber-js features/b2b_return.feature",
+    "test": "npx cucumber-js --format @cucumber/cucumber-allure-formatter"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@cucumber/messages": "^27.2.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.13.4"
+  },
+  "dependencies": {
+    "@cucumber/html-formatter": "^21.10.0",
+    "@cucumber/pretty-formatter": "^1.0.1"
+  }
+}
