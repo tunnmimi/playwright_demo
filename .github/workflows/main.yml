@@ -1,0 +1,54 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, master, feat/* ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch: # Cho phép chạy thủ công từ GitHub UI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Bước 1: Checkout code từ repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: feat/update-playwright-bdd-js
+
+      # Bước 2: Thiết lập Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Bước 3: Cài đặt dependencies
+      - name: Install dependencies
+        working-directory: ./playwright-bdd-js
+        run: npm install
+
+      # Bước 4: Cài đặt Playwright browsers
+      - name: Install Playwright browsers
+        working-directory: ./playwright-bdd-js
+        run: npx playwright install --with-deps
+        
+      # Bước 5: Trỏ đúng thư mục chạy cucumber
+      - name: Debug feature files
+        working-directory: ./playwright-bdd-js
+        run: ls -R ./features
+
+      # Bước 6: Chạy kiểm thử Playwright với Cucumber
+      - name: Run Playwright tests
+        working-directory: ./playwright-bdd-js
+        run: npx cucumber-js --config cucumber.json --profile common
+
+      # Bước 7: Upload báo cáo kiểm thử
+      - name: Upload test report
+        if: always() # Upload cả khi thất bại hoặc thành công
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: playwright-bdd-js/report/common-report.html
+          retention-days: 7
