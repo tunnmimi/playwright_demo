@@ -9,14 +9,14 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64]
 
     steps:
       # Bước 1: Checkout code từ repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: develop
 
       # Bước 2: Thiết lập Node.js
       - name: Setup Node.js
